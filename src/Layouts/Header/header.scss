@@ -1,3 +1,47 @@
 #header{
-    position:relative
+    position:relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 50px;
+    border-bottom: 2px solid rgba(10, 10, 10, 0.101);
+
+    .header-main{
+        display: flex;
+        align-items: inherit;
+
+        .nav-links{
+        display:flex;
+        margin:0 20px;
+        align-items: center;
+            list-style-type: none;
+
+           
+            .nav-link:not(.active){
+                opacity:.5
+            }
+
+            .nav-link{
+            padding:30px 10px;
+            transition: 0.2s;
+            border-bottom: 3px solid transparent;
+                &.active{
+            border-color: var(--primary-color);
+
+                }
+                &:hover{
+                    opacity:1
+                }
+            }
+
+        }
+}
+
+
+
+.header_action{
+    display: flex;
+    align-items: center;
+    gap:0 20px;
+}
 }
