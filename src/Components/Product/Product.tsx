@@ -36,7 +36,7 @@ const ProductQuantity=()=>{
     )
 }
 
-// product info
+// PRODUCT INFO
 export const ProductInfo = () => {
   return (
     <div className="product_information">
@@ -63,11 +63,22 @@ export const ProductInfo = () => {
   )
 }
 
-// PRODUCT DISPLAY
 
+
+// PRODUCT DISPLAY
 export const ProductDisplay = () => {
     return (
-      <div className="product_display">display</div>
+      <div className="product_display">
+          <div className="gallery">
+              <div className="current-display"></div>
+              <div className="thumbnails">
+                  <div className="thumb"></div>
+                  <div className="thumb"></div>
+                  <div className="thumb"></div>
+                  <div className="thumb"></div>
+              </div>
+          </div>
+      </div>
     )
   }
   
