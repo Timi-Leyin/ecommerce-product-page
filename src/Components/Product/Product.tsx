@@ -41,7 +41,7 @@ export const ProductInfo = () => {
   <h6 className="product-owner">Sneaker Company</h6>
         <h1 className='product-name'>Fall Limited Edition Sneakers.</h1>
         <p className="product-description small">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis explicabo distinctio dolores esse dicta corrupti, exercitationem architecto iure quasi. Veritatis.
+           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum ut enim mollitia, similique dolores culpa eos doloribus! Fugit quas, consequuntur non mollitia esse perspiciatis sunt, illum iure, distinctio ex enim.
         </p>
   </div>
 
