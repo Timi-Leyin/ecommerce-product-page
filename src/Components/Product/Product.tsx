@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 import './product.scss';
 import iconPlus from '../../Assets/images/icon-plus.svg';
@@ -6,6 +6,7 @@ import iconMinus from '../../Assets/images/icon-minus.svg';
 import iconCart from '../../Assets/images/icon-cart.svg';
 import iconNext from '../../Assets/images/icon-next.svg';
 import iconPrevious from '../../Assets/images/icon-previous.svg';
+import iconClose from '../../Assets/images/icon-close.svg';
 
 // slide images
 import productImage1 from '../../Assets/images/image-product-1.jpg'
@@ -69,11 +70,12 @@ export const ProductInfo = ({quantity,setQuantity,onAddToCart}:{quantity:any,set
 
 
 // PRODUCT DISPLAY
-export const ProductDisplay = () => {
+export const ProductDisplay = ({children}:{children?:React.ReactNode}) => {
     // slide images ====> array
     const images = [productImage1,productImage2,productImage3,productImage4];
     // current image display index
     const [index,changeIndex] = useState(0)
+    const [status,LightBox] =useState(false)
 
     const max = images.length -1
     const min = 0
@@ -98,12 +100,30 @@ export const ProductDisplay = () => {
     }
 
 
+
     return (
+        <Fragment>
+
+          
+
       <div className="product_display">
+
+        { (status && children) && (
+            <div className="lightbox">
+                <div className="overlay" onClick={()=> LightBox(false)}>
+                    <div className="close cursor-pointer"><img width={30} src={iconClose} alt="" /></div>
+                </div>
+                {children}
+            </div>
+        )}
+    
+
           <div className="gallery">
 
               <div className="current-display">
-                  <img src={images[index]} alt="" className="img" />
+                 <div onClick={()=> LightBox(true)} className='img'>
+                 <img src={images[index]} alt="" className="img" />
+                 </div>
               <div className="control control-prev" style={{
                   opacity:index==min ? 0.4 : 1
               }} onClick={prevImage}><img src={iconPrevious} alt="previous" /></div>
@@ -127,6 +147,7 @@ export const ProductDisplay = () => {
               </div>
           </div>
       </div>
+      </Fragment>
     )
   }
   
@@ -135,7 +156,9 @@ export const ProductDisplay = () => {
 const Product = ({quantity,setQuantity,onAddToCart}:{quantity:any,setQuantity:any,onAddToCart:any}) => {
   return (
    <section id="product">
+     <ProductDisplay>
      <ProductDisplay />
+     </ProductDisplay>
      <ProductInfo quantity={quantity} setQuantity={setQuantity} onAddToCart={onAddToCart} />
    </section>
   )

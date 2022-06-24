@@ -86,10 +86,61 @@
 
   .product_display{
       user-select: none;
+
+
+.lightbox{
+  position: fixed;
+  top:0;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  z-index:10;
+  left:0;
+  height:100%;
+  width: 100%;
+@media screen and (max-width:500px) {
+  display:none;
+  pointer-events: none;
+  
+}
+  .overlay{
+    position: inherit;
+    top:inherit;
+    z-index:-1;
+    left:inherit;
+    height:inherit;
+    width: inherit;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.933);
+    .close{
+      position: fixed;
+      top:0%;
+      right:0%;
+      padding:50px;
+      filter:brightness(1000%);
+      z-index:11;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       .gallery{
           .current-display{
               position: relative;
-              width: 45 0px;
+              max-width: 450px;
               border-radius: 15px;
               cursor: pointer;
               height: 300px;
