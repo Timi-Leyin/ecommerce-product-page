@@ -2,6 +2,8 @@
 import './product.scss';
 import iconPlus from '../../Assets/images/icon-plus.svg';
 import iconMinus from '../../Assets/images/icon-minus.svg';
+import iconCart from '../../Assets/images/icon-cart.svg';
+
 import { useState } from 'react';
 
 
@@ -26,6 +28,7 @@ const ProductQuantity=()=>{
     </div>
 
      <button className='add-cart-btn' disabled={quantity < 1 && true }>
+         <span><img src={iconCart} alt="" /></span>
 <span>Add to cart</span>
      </button>
 

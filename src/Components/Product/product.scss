@@ -65,6 +65,10 @@
             width:100%;
             background-color: var(--primary-color);
             color:#fff;
+            gap:0 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border-radius: 10px;
         }
 
