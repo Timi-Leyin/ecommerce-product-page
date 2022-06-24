@@ -12,10 +12,12 @@
 
 html {
   scroll-behavior: smooth;
+  max-width:1110px;
+  margin: auto;
 }
 
 body {
-  font-family: "Georama", sans-serif;
+  font-family: "Georama", sans-serif; 
 }
 
 ._flex {
