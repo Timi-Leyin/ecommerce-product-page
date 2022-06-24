@@ -16,17 +16,11 @@ import productImage4 from '../../Assets/images/image-product-4.jpg'
 
 
 
-type QuantityFn = (type:string)=> void
 
 type ImageSlide = ()=> void
 
-const ProductQuantity=()=>{
-    let [quantity,changeQuantity] = useState(0);
+const ProductQuantity=({quantity,setQuantity,onAddToCart}:{quantity:any,setQuantity:any,onAddToCart:any})=>{
 
-    const setQuantity:QuantityFn = (type)=>{
-        if(type == 'minus') changeQuantity(quantity>=1 ? quantity-1: 0) 
-        if(type == 'plus')  changeQuantity(quantity+1)
-    }
     return(
         <div className="product-actions">
 
@@ -36,7 +30,7 @@ const ProductQuantity=()=>{
         <span className="plus-quantity cursor-pointer" onClick={()=> setQuantity('plus')}><img src={iconPlus} alt="plus product quantity" /></span>
     </div>
 
-     <button className='add-cart-btn' disabled={quantity < 1 && true }>
+     <button className='add-cart-btn' onClick={onAddToCart} disabled={quantity < 1 && true }>
          <span><img src={iconCart} alt="" /></span>
 <span>Add to cart</span>
      </button>
@@ -46,7 +40,7 @@ const ProductQuantity=()=>{
 }
 
 // PRODUCT INFO
-export const ProductInfo = () => {
+export const ProductInfo = ({quantity,setQuantity,onAddToCart}:{quantity:any,setQuantity:any,onAddToCart:any}) => {
   return (
     <div className="product_information">
   <div>
@@ -66,7 +60,7 @@ export const ProductInfo = () => {
         </div>
 
        
-   <ProductQuantity />
+   <ProductQuantity quantity={quantity} setQuantity={setQuantity} onAddToCart={onAddToCart}/>
         
     </div>
   )
@@ -138,11 +132,11 @@ export const ProductDisplay = () => {
   
 
 
-const Product = () => {
+const Product = ({quantity,setQuantity,onAddToCart}:{quantity:any,setQuantity:any,onAddToCart:any}) => {
   return (
    <section id="product">
      <ProductDisplay />
-     <ProductInfo />
+     <ProductInfo quantity={quantity} setQuantity={setQuantity} onAddToCart={onAddToCart} />
    </section>
   )
 }

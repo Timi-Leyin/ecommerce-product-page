@@ -1,8 +1,8 @@
 #cart{
-    position: fixed;
+    position: absolute;
     z-index:1;
     right:5%;
-    top:5%;
+    top:50%;
     background: #fff;
     // padding:10px;
     width: 350px;
@@ -42,6 +42,12 @@
                 height:50px;
                 border-radius:10px;
                 background-color: #eee;
+                img{
+                    width:100%;
+                    height:100%;
+                    border-radius: inherit;
+                    object-fit: cover;
+                }
             }
         }
     }

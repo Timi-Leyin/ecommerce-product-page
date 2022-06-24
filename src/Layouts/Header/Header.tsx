@@ -1,11 +1,12 @@
 import './header.scss';
 import logo from '../../Assets/images/logo.svg';
 import avatar from '../../Assets/images/image-avatar.png';
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import Cart from '../../Components/Cart/Cart';
+import { TypeCart } from '../../App';
 // import { CartToggler } from '../../Components/Cart/Cart';
 
-const Header = () => {
+const Header = ({cart,setCart}:{cart:TypeCart,setCart:Dispatch<SetStateAction<TypeCart>>}) => {
   return (
     <div id="header">
 <div className="header-main">
@@ -31,7 +32,7 @@ const Header = () => {
 
 
 <div className="header_action">
-  <Cart />
+  <Cart cart={cart} setCart={setCart} />
 <div className="profile"><img src={avatar} alt="Avatar Image" width={40} /></div>
 </div>
 

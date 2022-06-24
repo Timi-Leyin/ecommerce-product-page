@@ -44,5 +44,21 @@
     display: flex;
     align-items: center;
     gap:0 20px;
+    .cart{
+        position: relative;
+        &:before{
+            content:attr(data-q);
+        // @extend .small;
+        font-size:10px;
+        position: absolute;
+        border-radius: 10px;;
+        top:-10px;
+        right:-10px;
+        padding:1px 10px;
+        font-weight:bold;
+        color:#fff;
+        background:var(--primary-color)
+    }
+}
 }
 }
