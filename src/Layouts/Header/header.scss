@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 50px;
+    // padding:20px 0;
     border-bottom: 2px solid rgba(10, 10, 10, 0.101);
 
     .header-main{
@@ -11,6 +12,7 @@
         align-items: inherit;
 
         .nav-links{
+           
         display:flex;
         margin:0 20px;
         align-items: center;

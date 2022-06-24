@@ -103,9 +103,6 @@ export const ProductDisplay = () => {
     
     }
 
-    useEffect(()=>{
-        console.log(index,'slide no')
-    },[index])
 
     return (
       <div className="product_display">
