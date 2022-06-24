@@ -36,13 +36,12 @@
             padding:30px 10px;
             transition: 0.2s;
             border-bottom: 3px solid transparent;
-                &.active{
+                &.active,&:hover{
             border-color: var(--primary-color);
+            opacity:1
 
                 }
-                &:hover{
-                    opacity:1
-                }
+               
             }
 
         }

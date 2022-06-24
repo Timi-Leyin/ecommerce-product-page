@@ -26,7 +26,7 @@ const Header = ({cart,setCart}:{cart:TypeCart,setCart:Dispatch<SetStateAction<Ty
   </div>
 <ul className="nav-links">
   <li className="nav-link"><a href="/">Collections</a></li>
-  <li className="nav-link active"><a href="/">Men</a></li>
+  <li className="nav-link"><a href="/">Men</a></li>
   <li className="nav-link"><a href="/">Women</a></li>
   <li className="nav-link"><a href="/">About</a></li>
   <li className="nav-link"><a href="/">Contact</a></li>
