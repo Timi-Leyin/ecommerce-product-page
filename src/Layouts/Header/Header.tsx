@@ -1,7 +1,9 @@
 import './header.scss';
 import logo from '../../Assets/images/logo.svg';
-import cartIcon from '../../Assets/images/icon-cart.svg';
 import avatar from '../../Assets/images/image-avatar.png';
+import { useState } from 'react';
+import Cart from '../../Components/Cart/Cart';
+// import { CartToggler } from '../../Components/Cart/Cart';
 
 const Header = () => {
   return (
@@ -29,7 +31,7 @@ const Header = () => {
 
 
 <div className="header_action">
-<div className="cart"><img src={cartIcon} alt="cart icon" /></div>
+  <Cart />
 <div className="profile"><img src={avatar} alt="Avatar Image" width={40} /></div>
 </div>
 
