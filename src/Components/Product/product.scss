@@ -85,14 +85,21 @@
 
 
   .product_display{
-      position: relative;
+      user-select: none;
       .gallery{
           .current-display{
+              position: relative;
               width: 45 0px;
               border-radius: 15px;
               cursor: pointer;
               height: 300px;
               background-color: #eee;
+              .img{
+                  width: 100%;
+                  height: 100%;
+                  border-radius: inherit;
+                  object-fit: cover;
+              }
           }
 
           .thumbnails{
@@ -100,13 +107,49 @@
               margin:20px 0;
               gap:0 20px;
               align-items: center;
+              .thumb{
+                  width:100px;
+                  position: relative;
+                  border:3px solid transparent;
+                  height:100px;
+                  cursor: pointer;
+                  border-radius: 10px;
+                  background: #eee;
+                  &.active{
+                      border:3px solid var(--primary-color)
+                  }
+                  &:hover{
+                      opacity:.6;
+                      transition:0.3s
+                  }
+                  img{
+                    //   position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: inherit;
+                    object-fit: cover;  
+                  }
+              }
           }
-          .thumb{
-              width:100px;
-              height:100px;
+
+
+          .control{
+              position: absolute;
+              top:50%;
+              width:50px;
+              transition: .3s;
+              margin: 0 -20px;
               cursor: pointer;
-              border-radius: 10px;
-              background: #eee;
+              box-shadow: 0 0 16px rgba(0,0,0,0.2);
+              height:50px;
+              display:grid;
+              place-content: center;
+              background: #fff;
+              border-radius: 30px;
+              transform: translateY(-50%);
+              &.control-next{
+                  right:0
+              }
           }
       }
   }
