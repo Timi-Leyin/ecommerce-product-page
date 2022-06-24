@@ -1,13 +1,39 @@
 
 import './product.scss';
+import iconPlus from '../../Assets/images/icon-plus.svg';
+import iconMinus from '../../Assets/images/icon-minus.svg';
+import { useState } from 'react';
 
-export const ProductDisplay = () => {
-  return (
-    <div className="product_display">display</div>
-  )
+
+type QuantityFn = (type:string)=> void
+
+
+
+const ProductQuantity=()=>{
+    let [quantity,changeQuantity] = useState(0);
+
+    const setQuantity:QuantityFn = (type)=>{
+        if(type == 'minus') changeQuantity(quantity>=1 ? quantity-1: 0) 
+        if(type == 'plus')  changeQuantity(quantity+1)
+    }
+    return(
+        <div className="product-actions">
+
+        <div className="quantity">
+        <span className="minus-quantity  cursor-pointer" onClick={()=> setQuantity('minus') }><img src={iconMinus} alt="minus product quantity" /></span>
+        <span className="quantity-no">{quantity}</span>
+        <span className="plus-quantity cursor-pointer" onClick={()=> setQuantity('plus')}><img src={iconPlus} alt="plus product quantity" /></span>
+    </div>
+
+     <button className='add-cart-btn' disabled={quantity < 1 && true }>
+<span>Add to cart</span>
+     </button>
+
+    </div>
+    )
 }
 
-
+// product info
 export const ProductInfo = () => {
   return (
     <div className="product_information">
@@ -27,13 +53,21 @@ export const ProductInfo = () => {
             <h4 className='old-price'>$250.00</h4>
         </div>
 
-        <div className="product-actions">
-
-        </div>
+       
+   <ProductQuantity />
+        
     </div>
   )
 }
 
+// PRODUCT DISPLAY
+
+export const ProductDisplay = () => {
+    return (
+      <div className="product_display">display</div>
+    )
+  }
+  
 
 
 const Product = () => {

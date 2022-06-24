@@ -20,6 +20,9 @@
       max-width: 450px;
       margin: 20px 0;
     }
+
+
+
     .product-price{
       &>div{
         display:flex;
@@ -42,5 +45,35 @@
           text-decoration: line-through;
       }
     }
+
+
+
+    .product-actions{
+        display: flex;
+        gap:50px;
+        margin-top: 20px;
+        .quantity{
+            display: flex;
+            width:150px;
+            font-weight: bold;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .add-cart-btn{
+            padding:10px 30px;
+            width:100%;
+            background-color: var(--primary-color);
+            color:#fff;
+            border-radius: 10px;
+        }
+
+    }
+
+
+
+
+
+
   }
 }
