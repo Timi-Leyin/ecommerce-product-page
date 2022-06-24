@@ -34,7 +34,10 @@ small,.small {
 
 
 // CUSTOM RESET
-
+img{
+  pointer-events: none;
+  user-select: none;
+}
 a{
   text-decoration: none;
   font-size: 12px;
