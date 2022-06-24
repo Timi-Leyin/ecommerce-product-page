@@ -10,6 +10,16 @@
         display: flex;
         align-items: inherit;
 
+        .close,.menu{
+            display: none;
+        }
+
+        .header_logo{
+            display:flex;
+            margin: 0 5px;
+            gap:0 10px;
+        }
+
         .nav-links{
            
         display:flex;
